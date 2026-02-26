@@ -48,7 +48,38 @@ const products = [
 ];
 
 app.get("/", (req, res) => {
-    res.send("Express server is running on 3000 port");
+    const apiGuide = {
+        message: "Welcome to Product Inventory API",
+        status: "Server is running on port 3000",
+        version: "1.0.0",
+        availableEndpoints: {
+            "GET /products": "Get all products",
+            "GET /products/:id": "Get a specific product by ID",
+            "GET /products/category/:categoryName": "Get products by category",
+            "POST /products": "Create a new product",
+            "PUT /products/:id": "Update entire product details",
+            "PUT /products/:id/stock": "Update product stock quantity",
+            "PUT /products/:id/price": "Update product price"
+        },
+        documentation: "Visit the README.md file for detailed API documentation",
+        baseURL: "http://localhost:3000",
+        exampleRequests: {
+            getAllProducts: "GET /products",
+            getProductById: "GET /products/1",
+            getByCategory: "GET /products/category/electronics",
+            createProduct: {
+                method: "POST /products",
+                body: {
+                    name: "Product Name",
+                    category: "Category",
+                    price: 999,
+                    stock: 10,
+                    rating: 4.5
+                }
+            }
+        }
+    };
+    res.status(200).json(apiGuide);
 });
 
 
