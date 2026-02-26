@@ -1,5 +1,8 @@
 # Product Inventory API
 
+**Live Deployment:** https://e-commerce-api-jxpl.onrender.com  
+**Postman Documentation:** https://documenter.getpostman.com/view/50839260/2sBXcGFLY8
+
 A simple Express.js REST API for managing an e-commerce product catalog with full CRUD operations.
 
 ## Overview
